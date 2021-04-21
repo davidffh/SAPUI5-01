@@ -1,0 +1,115 @@
+<mvc:View xmlns="sap.m" 
+          xmlns:core="sap.ui.core" 
+          xmlns:mvc="sap.ui.core.mvc" 
+          xmlns:f="sap.ui.layout.form" 
+          controllerName="ns.Front.controller.App" 
+          displayBlock="true">
+
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="employeePage" title="{i18n>title}">
+					<content>
+                        <VBox id="formContainerPersonal" class="SapUiSmallMargin" items="{path: '/forms'}">
+                            <f:SimpleForm id="simpleFormPersonal" editable="true" layout="ColumnLayout" columnsL="2" columnsM="2" columnsXL="2">  
+                                <f:content>
+                                    <core:Title text="{i18n>information}" icon="sap-icon://message-information"/>
+                                        <Label text="{i18n>name}"/>
+                                        <Input required="true" change="onChange" value="{ path : 'name',
+                                                                                          type: 'sap.ui.model.type.String' }"/>
+                                        <Label text="{i18n>street}"/>
+                                        <Input value="{street/name}"/>
+                                        <Input value="{street/number}">
+                                            <layoutData>
+                                                <f:ColumnElementData cellsSmall="3" cellsLarge="2"/>
+                                            </layoutData>
+                                        </Input>
+
+                                        <Label text="{i18n>zip}"/>
+                                        <Input value="{ path: 'zip/code',
+                                                        type: 'sap.ui.model.type.Integer'}">
+                                            <layoutData>
+                                                <f:ColumnElementData cellsSmall="3" cellsLarge="2"/>
+                                            </layoutData>
+                                        </Input>
+                                        <Input value="{zip/city}"/>
+                                        <Select id="country" selectedKey="country">
+                                            <items>
+                                                <core:Item text="England" key="EN" />
+                                                <core:Item text="Germany" key="DE" />
+                                                <core:Item text="US" key="US" />
+                                            </items>
+                                        </Select>
+
+                                    <core:Title text="{i18n>contact}" icon="sap-icon://contacts"/>
+                                    <Label text="{i18n>email}"/>
+                                    <Input value="{ path: 'email',
+                                                    type: 'sap.ui.model.type.String',
+                                                    constraints: {
+                                                        search: '^\\w+[\\~+\\.]*\\@[a-zA-Z]+.[a-zA-Z]+'
+                                                    }
+                                                  }" />
+                                    
+                                    <Label text="{i18n>phone}"/>
+                                    <Input value="{phone/number}"/>
+                                    <Input value="{phone/time}">
+                                        <layoutData>
+                                            <f:ColumnElementData cellsSmall="2" cellsLarge="2"/>
+                                        </layoutData>                                    
+                                    </Input>
+                                    <Label text="{i18n>website}"/>
+                                    <Input value="{website}"/>
+
+                                </f:content>
+                            </f:SimpleForm>
+                            
+                        </VBox>
+
+                        <VBox id="formContainerEmployment" class="SapUiSmallMargin" items="{/employment}">
+                            <f:SimpleForm id="simpleFormEmplyment" editable="true" layout="ColumnLayout" columnsL="2" columnsM="2" columnsXL="2">  
+                                <f:content>
+                                    <core:Title text="{i18n>position}" icon="sap-icon://account"/>
+                                    <Label text="{i18n>job}"/>
+                                    <Input value="{jobTitle}"/>
+                                    <Label text="{i18n>pay}"/>
+                                    <Input value="{payGrade}"/>
+                                    <Label text="{i18n>unit}"/>
+                                    <Input value="{unit}"/>
+
+                                    <core:Title text="{i18n>rating}" icon="sap-icon://example"/>
+                                    <Label text="{i18n>eclass}"/>
+                                    <Input value="{class}"/>
+                                    <Label text="{i18n>fte}"/>
+                                    <Input value="{fte}"/>
+                                    <Label text="{i18n>hours}"/>
+                                    <Input change="onChange" value=" { path: 'weeklyHours',
+                                                                      type: 'sap.ui.model.type.Integer',
+                                                                      constraints: {
+                                                                          maximun: 40
+                                                                          }
+                                                                      }" />
+
+                                </f:content>                            
+                            </f:SimpleForm>                        
+                        </VBox>
+                    </content>
+
+                    <footer>
+                        <OverflowToolbar >
+                            <Button id="messagePopover"  press=".handleMessagePopover" 
+                                    text="{path: '/', formatter: '.mpSeverityMessages'}"
+                                    type="{path: '/', formatter: '.mpTypeFormatter'}"
+                                    icon="{path: '/', formatter: '.mpIconFormatter'}"
+                                    visible="false"
+                                    />
+                            <ToolbarSpacer/>
+                            <Button text="Save" press="saveData" type="Emphasized"/>
+                            <Button text="Cancel"/>
+                        </OverflowToolbar>
+                    </footer>
+				
+                </Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

@@ -1,0 +1,9 @@
+/* Enter your custom styles here */
+
+.btpTitle {
+    color: white !important;
+    font-weight: bold;
+    font-size: 1rem;
+    text-shadow: none !important;
+    text-decoration: none !important;
+}

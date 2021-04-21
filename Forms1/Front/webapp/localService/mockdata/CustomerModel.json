@@ -1,0 +1,59 @@
+{
+    "forms": [
+        {
+            "name": "Julie Armstrong",
+            "street": {
+                "name": "Mainstreet",
+                "number": 1278
+            },
+            "zip": {
+                "code": 12345,
+                "city": "Boston"
+            },
+            "country": "US",
+            "email": "JulieArmstrong@logaligroup.com",
+            "phone": {
+                "number": "+1 (610) 661-1000",
+                "time": "12:00"
+            },
+            "website": "www.logaligroup.com"
+        },
+
+        {
+            "name": "David fúnez",
+            "street": {
+                "name": "Santa Cruz",
+                "number": 15
+            },
+            "zip": {
+                "code": 12345,
+                "city": "Tegucigalpa"
+            },
+            "country": "HN",
+            "email": "davidffh@gmail.com",
+            "phone": {
+                "number": "(504) 9930-5646",
+                "time": "12:00"
+            },
+            "website": "www.frelance.com"
+        }
+    ],
+    "employment": [
+        {
+            "jobTitle": "Senior UI Developer (UIDEV-SR)",
+            "payGrade": "Salary Grade 65 (GR-14)",
+            "unit": "USD",
+            "class": "Employee",
+            "fte": 1,
+            "weeklyHours": 40
+        },
+                {
+            "jobTitle": "Senior Full Stack Developer (UIDEV-SR)",
+            "payGrade": "Salary Grade 100 (GR-15)",
+            "unit": "USD",
+            "class": "General Manager",
+            "fte": 1,
+            "weeklyHours": 40
+        }
+    ]
+}

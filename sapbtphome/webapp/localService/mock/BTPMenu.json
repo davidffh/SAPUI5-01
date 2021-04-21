@@ -1,0 +1,54 @@
+{
+    "selectedKey":"page2",
+    "navigation":[
+        {
+            "key":"subaccounts",
+            "title":"Subaccounts",
+            "icon":"sap-icon:\/\/org-chart"
+        },
+        {
+            "key":"directories",
+            "title":"Directories",
+            "icon":"sap-icon:\/\/folder"
+        },
+        {
+            "key":"resourceProviders",
+            "title":"Resource Providers",
+            "icon":"sap-icon:\/\/curriculum"
+        },
+        {
+            "key":"boosters",
+            "title":"Boosters",
+            "icon":"sap-icon:\/\/measurement-document"
+        },        
+                {
+            "key":"systemLandscape",
+            "title":"System Landscape",
+            "icon":"sap-icon:\/\/it-system",
+            "items": [
+            {
+                "key":"systems",
+                "title":"Systems"
+            },
+            {
+                "key":"formations",
+                "title":"Formations"
+            }
+            ]
+        }     
+    ],
+    "fixednavigation":[
+        {
+            "icon":"sap-icon:\/\/chain-link",
+            "key":"usefulLinks",
+            "title":"Useful Links"
+        },
+        {
+            "icon":"sap-icon:\/\/compare",
+            "key":"legalInformation",
+            "title":"Legal Information"
+        }
+
+    ]
+
+}

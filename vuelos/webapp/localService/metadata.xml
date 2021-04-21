@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZOD_VUELOS_SRV" xml:lang="es" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Aerolineas" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Carrid"/>
+                </Key>
+                <Property Name="Carrid" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Compañía aérea" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Carrname" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Compañía aérea" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currcode" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Mon.loc.cia.aér." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Url" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="URL" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Reservas" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Carrid"/>
+                    <PropertyRef Name="Connid"/>
+                    <PropertyRef Name="Fldate"/>
+                    <PropertyRef Name="Bookid"/>
+                    <PropertyRef Name="Class"/>
+                    <PropertyRef Name="Forcuram"/>
+                    <PropertyRef Name="Forcurkey"/>
+                    <PropertyRef Name="Passname"/>
+                </Key>
+                <Property Name="Carrid" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Compañía aérea" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Connid" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Número de vuelo" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Fldate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Fe.vuelo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bookid" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Nº reservación" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Customid" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Nº cliente" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Custtype" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Cliente E/P" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Smoker" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Fumadores" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Luggweight" Type="Edm.Decimal" Nullable="false" Precision="8" Scale="4" sap:unicode="false" sap:unit="Wunit" sap:label="Peso equipaje" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Wunit" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Unidad medida" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="Invoice" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Facturación" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Class" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Clase" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Forcuram" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="Forcurkey" sap:label="Importe" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Forcurkey" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Moneda de pago" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Loccuram" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="Loccurkey" sap:label="Importe" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Loccurkey" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Mon.loc.cia.aér." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="OrderDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Fecha reserv." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Counter" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Term.pto.venta" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Agencynum" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Nº ag.viajes" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Cancelled" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ind.anulación" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Reserved" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Reservado" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Passname" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Nombre pasajero" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Passform" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Tratamiento" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Passbirth" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Fe.nacim.pasaj." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZOD_VUELOS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="AerolineasSet" EntityType="ZOD_VUELOS_SRV.Aerolineas" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ReservasSet" EntityType="ZOD_VUELOS_SRV.Reservas" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="https://vhihsdevci.hec.ihss.hn:44300/sap/opu/odata/sap/ZOD_VUELOS_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://vhihsdevci.hec.ihss.hn:44300/sap/opu/odata/sap/ZOD_VUELOS_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
