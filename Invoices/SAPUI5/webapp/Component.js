@@ -24,7 +24,7 @@ sap.ui.define([
 
             init: function () {
                 //call the init function of the parent
-                UIcomponent.prototype.init.apply(this, arguments);
+                UIComponent.prototype.init.apply(this, arguments);
                 //set data model on the view
                 this.setModel(Models.createRecipient());
                 //set i18n model on the view
